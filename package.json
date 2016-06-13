@@ -1,0 +1,13 @@
+{
+  "name": "Khif-Badminton",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
+    "express": "^4.10.3",
+    "jsonwebtoken": "^5.7.0",
+    "mongoose": "^4.4.13",
+    "morgan": "^1.7.0"
+  }
+}

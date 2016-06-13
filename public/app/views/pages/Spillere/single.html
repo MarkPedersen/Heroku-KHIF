@@ -1,0 +1,47 @@
+<div ng-include src="'app/shared/navbar-data.html'"></div>
+<div class="page-header">
+	<button ng-if="spiller.type == 'edit'" class="btn btn-danger btn-lg pull-right" id="delBtn" ng-click="spiller.deleteSpiller(spiller.spillerData._id)">Delete</button>
+	<h1 ng-if="spiller.type == 'create'">Create spiller</h1>
+	<h1 ng-if="spiller.type == 'edit'">Edit spiller</h1>
+</div>
+
+<form class="form-horizontal" ng-submit="spiller.saveSpiller()">
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Navn</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="spiller.spillerData.navn">
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Alder</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="spiller.spillerData.alder">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Hold</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="spiller.spillerData.hold">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-6">
+			<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="spiller.type == 'create'">Create bruger</button>
+
+			<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="spiller.type == 'edit'">Edit bruger</button>
+		</div>
+	</div>
+
+</form>
+<div class="row show-hide-message" ng-show="spiller.message">
+	<div class="col-sm-6 col-sm-offset-2">
+		<div class="alert alert-info">
+			{{ spiller.message }}
+		</div>
+	</div>
+</div>

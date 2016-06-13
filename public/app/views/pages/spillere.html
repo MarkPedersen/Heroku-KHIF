@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<div ng-include src="'app/shared/navbar-data.html'"></div>
+<html lang="en">
+<div class="page-header">
+</div>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<div class="container">
+	<a ui-sref="about" class="nav-link">About</a>
+<h2>Medlems database</h2>
+<table class="table table-bordered" >
+	<thread>
+		<tr>
+			<td>Navn</td>
+			<td>Alder</td>
+			<td>Hold</td>
+		</tr>
+	</thread>
+	<tbody>
+		<tr>
+			<td><input class="form-control" ng-model="spiller.navn"></td>
+			<td><input class="form-control" ng-model="spiller.alder"></td>
+			<td><input class="form-control" ng-model="spiller.hold"></td>
+			<td><button class="btn btn-primary" ng-click="addspiller">Tilføj bruger</td>
+		</tr>
+		<tr ng-repeat="spiller in spiller.spillere">
+			<td>{spiller.navn}}</td>
+			<td>{{spiller.alder}}</td>
+			<td>{{spiller.hold}}</td>
+			<td>
+				<button class="btn btn-info">Rediger</button>
+				<button class="btn btn-danger">Slet</button>
+
+		</tr>
+	</tbody>
+</table>

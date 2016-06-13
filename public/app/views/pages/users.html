@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="page-header">
+</div>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<div class="container">
+	<a ui-sref="about" class="nav-link">About</a>
+<h2>Medlems database</h2>
+<table class="table table-bordered" >
+	<thread>
+		<tr>
+			<td>Navn</td>
+			<td>Alder</td>
+			<td>Hold</td>
+		</tr>
+	</thread>
+	<tbody>
+		<tr>
+			<td><input class="form-control" ng-model="person.name"></td>
+			<td><input class="form-control" ng-model="person.username"></td>
+			<td><input class="form-control" ng-model="person.password"></td>
+			<td><button class="btn btn-primary" ng-click="addperson">Tilføj bruger</td>
+		</tr>
+		<tr ng-repeat="person in user.users">
+			<td>{person.name}}</td>
+			<td>{{person.username}}</td>
+			<td>{{user.password}}</td>
+			<td>
+				<button class="btn btn-info">Rediger</button>
+				<button class="btn btn-danger">Slet</button>
+
+		</tr>
+	</tbody>
+</table>

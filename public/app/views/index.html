@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Khif Badminton</title>
+
+	<!-- ANGULAR ROUTING -->
+	<base href="/">
+
+
+	<!-- CSS -->
+	<!-- load boostrap from CDN and custom css -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/paper/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
+	<link rel="stylesheet" href="../../assets/css/style.css">
+
+	<!-- Load Jquery via CDN -->
+	<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+
+	<!-- JS -->
+	<!-- load angular and angular-route via CDN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<!-- Controllers -->	
+	<script src="app/controllers/mainCtrl.js"></script>
+	<script src="app/controllers/userCtrl.js"></script>
+	<script src="app/controllers/spillerCtrl.js"></script>
+
+	<!-- Services  -->
+	<script src="app/services/authService.js"></script>
+	<script src="app/services/userService.js"></script>
+	<script src="app/services/spillerService.js"></script>
+
+	<!-- main angular app files -->
+	<script src="app/app.routes.js"></script>
+	<script src="app/app.js"></script>
+
+
+</head>
+
+
+<body ng-app="userApp" ng-controllor="maincontroller as main">
+<!-- NAVBAR -->
+<header>
+
+	<div class="container" style="background-color: #e6e6e6;">
+		<div class="title" style="text-align:center; font-size:45px;">KHIF Badminton</div>
+	</div>
+
+
+
+	<div class="navbar navbar-inverse container">
+	<div class="container">
+		<ul class="nav navbar-nav">
+			<li ><a href="/" ><span></span>Forside</a></li>
+			<li ><a href="/kontakt"><span></span>Informationer</a></li>
+			<li><a href="/ungdom"><span></span>Ungdom</a></li>
+			<li><a href="/senior"><span></span>Senior</a></li>
+			<li ><a href="/kalender"><span></span>Kalender</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" col-lg-5>
+			<li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
+		</ul>
+	</div>
+	</div>
+</header>
+
+
+<main class="container">
+	<!-- ANGULAR VIEWS INJECTED -->
+	<div ng-view></div>
+</main>
+
+
+<hr>
+<footer>
+	<div class="container" style="text-align:center;">
+		<ul style="float:none;">
+			<li class="Customfooter">53 65 43 90</li>
+			<li class="Customfooter">Bygaden 18, 1. , Bank : reg.nr. 1344 konto nr. 2551 283 480 , 4070 Kirke Hyllinge</li>
+			<li class="Customfooter">formand@khif-badminton.dk</li>
+			<li class="Customfooter"><a href="https://www.facebook.com/groups/287254734659121/?fref=ts">Facebook</a></li>
+		</ul>
+	</div>
+</footer>
+
+<style type="text/css">
+	.Customfooter{
+		list-style: none;
+		float:none;
+		margin-right: 2em;
+		display:inline;
+	};
+</style>
+
+</body>
+</html>

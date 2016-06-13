@@ -1,0 +1,39 @@
+<div ng-include src="'app/shared/navbar-data.html'"></div>
+<div class="page-header">
+	<h1>
+		spillere
+		<a href="/spiller/create" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus"></span> 
+			Ny spiller
+		</a>
+	</h1>
+
+</div>
+
+<div class="jumbotron text-center" ng-show="spiller.processing">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading spillere..</p>
+</div>
+
+<table class="table table-bordered table-striped" ng-show="spiller.spillere">
+	<thead>
+		<tr>
+			<th>navn</th>
+			<th>alder</th>
+			<th>hold</th>
+			<th class="col-sm-2"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="spiller in spiller.spillere">
+			<td>{{ spiller.navn }}</td>
+			<td>{{ spiller.alder }}</td>
+			<td>{{ spiller.hold }}</td>
+			<td class="col-sm-2">
+				<a ng-href="/spiller/{{ spiller._id }}" class="btn btn-danger">Edit</a>
+				<a href="#" ng-click="spiller.deleteSpiller(spiller._id)" class="btn btn-primary">Delete</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div>
